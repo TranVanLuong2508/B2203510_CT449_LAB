@@ -4,7 +4,7 @@ class ContactService {
   constructor(client) {
     this.Contact = client.db().collection("contacts");
   }
-  
+
   extractContactData(payload) {
     const contact = {
       name: payload.name,
@@ -36,7 +36,7 @@ class ContactService {
 
   async findByName(name) {
     return await this.find({
-      name: { $regex: new RegExp(new RegExp(name)), $option: { i } },
+      name: { $regex: new RegExp(new RegExp(name)), $option: "i" },
     });
   }
 
