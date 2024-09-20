@@ -13,7 +13,7 @@ router.route("/favorite")
 
 router.route("/:id")
     .get(contacts.findOne)
-    .put(contacts.create)
+    .put(contacts.update)
     .patch(contacts.delete)
 
 module.exports = router
